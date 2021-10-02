@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
+/**
  *main - print if a number random is negative or positive
  *or equal zero
  */
