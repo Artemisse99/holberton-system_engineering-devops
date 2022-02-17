@@ -10,4 +10,4 @@ while [ "$counter" -le 10 ]; do
 	echo "Best School"
     fi
     let counter=counter+1
-    done
+done
