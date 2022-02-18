@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script is displaying clock
-Hour=1
+Hour=0
 while [ "$Hour" -lt 13 ]; do
       echo "Hour: $Hour" 	  
       Minute=1
