@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh ubuntu@3.80.92.5
