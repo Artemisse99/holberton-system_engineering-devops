@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#Tranfer file at remote server
+# Update repositories
+sudo apt-get update
+
+# Install NGINX
+sudo apt-get install nginx -y
+
+# Configure firewall
+# Uncomment out the line that meets your needs
+sudo ufw allow 'Nginx HTTP' # port 80 only
+echo "Hello World!" >/var/www/html/index.nginx-debian.html
+service nginx restart
