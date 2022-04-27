@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Add default linked
 rm default
 ln -s /etc/nginx/sites-available/default
 sudo service nginx restart
