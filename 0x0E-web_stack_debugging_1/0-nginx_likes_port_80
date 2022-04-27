@@ -2,4 +2,5 @@
 #Add default linked
 rm default
 ln -s /etc/nginx/sites-available/default
+pkill nginx
 sudo service nginx restart
