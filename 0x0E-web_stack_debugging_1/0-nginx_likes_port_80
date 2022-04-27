@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #Add default linked
-rm /etc/nginx/sites-enabled/default
+sudo rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default
-pkill nginx
 sudo service nginx restart
