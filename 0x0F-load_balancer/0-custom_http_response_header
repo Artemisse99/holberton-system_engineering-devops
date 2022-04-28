@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#Configure new server 
+
 apt-get -y update
 apt-get -y install nginx
 ufw allow  'Nginx HTTP' #on port 80
