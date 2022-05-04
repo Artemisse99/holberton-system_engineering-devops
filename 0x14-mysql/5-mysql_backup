@@ -2,4 +2,4 @@
 #Do backup database and convert to format .tar.gz
 
 mysqldump --user root --password="$1"  --all-databases > backup.sql
-tar -cvzf "$(date +%d-%m-%Y).tar.gz" ./backup.sql
+tar -cvzf "$(date +%d-%m-%Y).tar.gz" backup.sql
