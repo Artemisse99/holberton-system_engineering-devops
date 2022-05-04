@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #Configure firewall port 22, 80, 443
 
 sudo apt install ufw
