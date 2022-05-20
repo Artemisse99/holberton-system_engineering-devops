@@ -1,27 +1,31 @@
 #!/usr/bin/python3
-"""Using what you did in the task #0,
-extend your Python script to export data in the JSON format."""
+"""Dictionary of list of dictionaries"""
 
 import json
 import requests
 
 if __name__ == '__main__':
-    r = requests.get("https://jsonplaceholder.typicode.com/users",
-                     verify=False).json()
-    dico = {}
-    usr_dic = {}
-    for pos in r:
-        user_iid = pos.get("id")
-        dico[user_iid] = []
-        usr_dic[user_iid] = pos.get("username")
-    alls = requests.get("https://jsonplaceholder.typicode.com/todos",
+
+    url = "https://jsonplaceholder.typicode.com"
+
+    users = requests.get(url + "/users",
+                         verify=False).json()
+    userdict = {}
+    usernamedict = {}
+
+    for user in users:
+        uid = user.get("id")
+        userdict[uid] = []
+        usernamedict[uid] = user.get("username")
+    todo = requests.get(url + "/todos",
                         verify=False).json()
-    for task in alls:
-        taskss = {}
-        user_iid = task.get("userId")
-        taskss["task"] = task.get('title')
-        taskss["completed"] = task.get('completed')
-        taskss["username"] = usr_dic.get(user_iid)
-        dico.get(user_iid).append(taskss)
+    for task in todo:
+        taskdict = {}
+        uid = task.get("userId")
+        taskdict["task"] = task.get('title')
+        taskdict["completed"] = task.get('completed')
+        taskdict["username"] = usernamedict.get(uid)
+        userdict.get(uid).append(taskdict)
+
     with open("todo_all_employees.json", 'w') as jsonfile:
-        json.dump(dico, jsonfile)
+        json.dump(userdict, jsonfile)
